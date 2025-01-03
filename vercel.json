@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/index.html",
+        "headers": {
+          "Cache-Control": "public, max-age=3600, must-revalidate"
+        },
+        "dest": "/index.html"
+      }
+    ]
+  }
