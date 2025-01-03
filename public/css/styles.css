@@ -43,7 +43,7 @@
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   /* --bs-primary-rgb: 13, 110, 253; */
-  --bs-primary-rgb: 94, 229, 231;
+  --bs-primary-rgb: 193, 244, 245;
   /* --bs-secondary-rgb: 44, 62, 80; */
   --bs-secondary-rgb: 39, 51, 51;
   --bs-success-rgb: 25, 135, 84;
@@ -75,8 +75,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #1abc9c;
-  --bs-link-hover-color: #15967d;
+  --bs-link-color: #63F0F2;
+  --bs-link-hover-color: #63F0F2;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -10854,7 +10854,7 @@ html {
     rgba(94, 229, 231, 0.8) 50%,
     rgba(94, 229, 21, 0.9) 75%
 ); */
-background-image: url("https://www.transparenttextures.com/patterns/noisy.png");
+background-image: url("/assets/img/noisy.png");
 /* background-color: linear-gradient(135deg, #fafafa, #c1f4f5); */
 background-color: #c1f4f5;
 
@@ -10932,13 +10932,13 @@ background-color: #c1f4f5;
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #1abc9c;
+  color: #63F0F2;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: #1abc9c;
+  color: #63F0F2;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10959,8 +10959,9 @@ background-color: #c1f4f5;
     margin-top: 0;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+    /* navbar selected color!! */
     color: #fff;
-    background: #1abc9c;
+    background: #759D9D;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;

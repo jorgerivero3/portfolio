@@ -1,7 +1,19 @@
 const express = require('express');
 const path = require ('path');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+//compression does not compress jpeg files
+// app.use(compression({
+//     filter: (req, res) => {
+//         const contentType = res.getHeader('Content-Type');
+//         if (contentType && contentType.includes('image/jpeg')){
+//             return false;
+//         }
+
+//         return compression.filter(req, res);
+//     }
+// }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -10,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/resume', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'resume.pdf'));
+    res.sendFile(path.join(__dirname, 'public', 'assets', 'resume.pdf'));
 })
 
 app.listen(PORT, () => {
