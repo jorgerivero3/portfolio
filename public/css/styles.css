@@ -11045,6 +11045,116 @@ background-color: #c1f4f5;
   font-size: 1.5rem;
 }
 
+.experience-icon-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  min-height: 11rem;
+  padding: 1.75rem 1.75rem 1.75rem 2.25rem;
+  background-image: url("/assets/img/noisy.png");
+  background-color: #f7f3ea;
+  color: #2c3e50;
+  border: 1px solid rgba(44, 62, 80, 0.15);
+  border-radius: 0.35rem;
+  box-shadow: 0 8px 16px rgba(44, 62, 80, 0.18), 0 1px 3px rgba(44, 62, 80, 0.12);
+  overflow: hidden;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+a.experience-icon-tile:hover,
+a.experience-icon-tile:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(44, 62, 80, 0.22), 0 2px 4px rgba(44, 62, 80, 0.14);
+  color: #2c3e50;
+}
+.experience-icon-tile::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  bottom: 0.7rem;
+  left: 0.7rem;
+  width: 0.3rem;
+  border-radius: 1rem;
+  background-color: #1abc9c;
+}
+.experience-icon-tile-icon-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  background-color: rgba(26, 188, 156, 0.14);
+}
+.experience-icon-tile i {
+  font-size: 2.1rem;
+  color: #1abc9c;
+}
+.experience-icon-tile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: left;
+  min-width: 0;
+}
+.experience-icon-tile-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+  line-height: 1.15;
+}
+.experience-icon-tile-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #3d4f5e;
+}
+.experience-icon-tile-dates {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #5a6b7a;
+}
+
+.experience-icon-tile--modal {
+  flex-direction: column;
+  text-align: center;
+  max-width: 22rem;
+  min-height: auto;
+  padding: 2.5rem 2rem 2rem;
+}
+.experience-icon-tile--modal::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  height: 0.35rem;
+  border-radius: 0 0 1rem 1rem;
+}
+.experience-icon-tile--modal .experience-icon-tile-icon-wrap {
+  width: 6rem;
+  height: 6rem;
+}
+.experience-icon-tile--modal .experience-icon-tile-icon-wrap i {
+  font-size: 2.75rem;
+}
+.experience-icon-tile--modal .experience-icon-tile-text {
+  align-items: center;
+  text-align: center;
+}
+.experience-icon-tile--modal .experience-icon-tile-label {
+  font-size: 1.6rem;
+}
+.experience-icon-tile--modal .experience-icon-tile-title {
+  font-size: 1.1rem;
+}
+.experience-icon-tile--modal .experience-icon-tile-dates {
+  font-size: 1.05rem;
+}
+
 .portfolio-modal .btn-close {
   color: #1abc9c;
   font-size: 2rem;
