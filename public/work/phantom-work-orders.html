@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phantom work orders · Jorge Rivero</title>
+  <meta name="description" content="An AI maintenance agent told callers their repair was booked. About 1 in 10 orders never reached the property system. How I traced it and what the fix required.">
+  <link rel="canonical" href="https://www.codedbyjorge.dev/work/phantom-work-orders.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Phantom work orders · Jorge Rivero">
+  <meta property="og:description" content="An AI agent told callers their repair was booked. About 1 in 10 never reached the property system.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <a class="name" href="/">Jorge Rivero</a>
+    <ul>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/resume.pdf">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main class="cs">
+    <article class="wrap">
+      <a class="back" href="/#work">← All work</a>
+
+      <header class="cs-head">
+        <p class="mono">Case study 01 · RespondIt AI · 2026</p>
+        <h1>Phantom work orders</h1>
+        <p class="deck">An AI maintenance agent told callers their repair had been booked. About 1 in 10 of those orders never reached the property system.</p>
+      </header>
+
+      <dl class="meta">
+        <div><dt class="mono">Role</dt><dd>Found, traced, and sized the failure; designed the fix</dd></div>
+        <div><dt class="mono">Systems</dt><dd>Voice agent, CRM work-order API, Yardi Voyager</dd></div>
+        <div><dt class="mono">Outcome</dt><dd>Classified P0 by the CTO; backfill plan and fix list delivered</dd></div>
+      </dl>
+
+      <section>
+        <h2>Context</h2>
+        <p>A maintenance-line agent was live for a group of properties. It took repair requests by phone and created work orders in the property management system.</p>
+        <p>Then an unverified caller was told their work order had been created. Nothing arrived in the property system. No error anywhere.</p>
+      </section>
+
+      <section>
+        <h2>What I did</h2>
+        <ol>
+          <li><strong>Traced the call through the CRM code myself.</strong> A guard on the work-order API only ran when a property was attached to the call. Without one, the endpoint returned success while the write to the property system quietly failed, and the agent repeated that success to the caller.</li>
+          <li><strong>Closed the hole at the front door.</strong> I gated unverified callers at the welcome message, before the agent could take a request. No admin screen shows the maintenance prompt, so I proved the fix by behavior: a four-turn adversarial simulator run where no work order fired for an unverified caller.</li>
+          <li><strong>Went looking for the same failure at a larger client.</strong> Over 30 days, about 1 in 10 AI-created work orders had never reached the property system. Two root causes explained roughly 85% and 15% of them.</li>
+        </ol>
+
+        <figure>
+          <svg viewBox="0 0 560 320" role="img" aria-labelledby="d1t d1d">
+            <title id="d1t">How a failed write became a confirmed repair</title>
+            <desc id="d1d">The caller talks to the AI agent, which calls the work order API. If a property is attached, the order syncs to the property system. If not, the write fails but the API still returns success, and the agent tells the caller their work order is in.</desc>
+            <defs>
+              <marker id="m1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-m"/></marker>
+              <marker id="m1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-a"/></marker>
+              <marker id="m1f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-f"/></marker>
+            </defs>
+
+            <rect class="d-box" x="20" y="20" width="150" height="48" rx="6"/>
+            <text class="d-t" x="95" y="49" text-anchor="middle">Caller</text>
+
+            <rect class="d-box" x="205" y="20" width="150" height="48" rx="6"/>
+            <text class="d-t" x="280" y="49" text-anchor="middle">AI agent</text>
+
+            <path class="d-line" d="M170,32 H203" marker-end="url(#m1)"/>
+            <path class="d-line-fail" d="M205,56 H172" marker-end="url(#m1f)"/>
+            <text class="d-tf" x="95" y="92" text-anchor="middle">“Your work order is in.”</text>
+
+            <path class="d-line" d="M280,68 V118" marker-end="url(#m1)"/>
+            <rect class="d-box" x="205" y="120" width="150" height="48" rx="6"/>
+            <text class="d-t" x="280" y="149" text-anchor="middle">Work order API</text>
+            <text class="d-ts" x="368" y="140">guard only runs</text>
+            <text class="d-ts" x="368" y="156">if a property is set</text>
+
+            <path class="d-line" d="M280,168 V196 H140 V228" marker-end="url(#m1)"/>
+            <path class="d-line-accent" d="M280,196 H420 V228" marker-end="url(#m1a)"/>
+
+            <rect class="d-box-fail" x="40" y="230" width="200" height="62" rx="6"/>
+            <text class="d-tf" x="140" y="256" text-anchor="middle">No property attached</text>
+            <text class="d-ts" x="140" y="276" text-anchor="middle">write fails, API says 200</text>
+
+            <rect class="d-box-accent" x="320" y="230" width="200" height="62" rx="6"/>
+            <text class="d-ta" x="420" y="256" text-anchor="middle">Property attached</text>
+            <text class="d-ts" x="420" y="276" text-anchor="middle">order syncs to the PMS</text>
+
+            <path class="d-line-fail" d="M60,230 V104 H232 V70" marker-end="url(#m1f)"/>
+            <text class="d-ts" x="68" y="124" style="fill:var(--fail)">returns success</text>
+          </svg>
+          <figcaption class="mono">Before the fix: the model was honest about what the API told it. The API wasn't.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Result</h2>
+        <p>The CTO classified it as P0. I delivered a backfill plan for the orphaned orders and a fix list for engineering:</p>
+        <ul>
+          <li>Persist the property on every work order</li>
+          <li>Truncate descriptions to the property system's limit</li>
+          <li>Never report success unless the write actually succeeded</li>
+          <li>Alert on any order that hasn't synced</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What it taught me</h2>
+        <p class="takeaway">An AI agent is only as honest as the API under it. If the system says success on a failed write, the model will say it confidently to a resident waiting on a repair.</p>
+      </section>
+
+      <nav class="next" aria-label="Next case study">
+        <a href="/work/guarded-reporting.html">
+          <span class="mono">Next · 02</span>
+          <h3>Reports that can't make things up →</h3>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap-wide">
+      <span class="mono">© 2026 Jorge Rivero</span>
+      <span class="mono">San Francisco</span>
+    </div>
+  </footer>
+</body>
+</html>

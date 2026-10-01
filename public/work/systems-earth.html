@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>systems.earth · Jorge Rivero</title>
+  <meta name="description" content="City environmental briefs for about 30,000 U.S. places, where LLM prose is locked to deterministic data badges and audited.">
+  <link rel="canonical" href="https://www.codedbyjorge.dev/work/systems-earth.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="systems.earth · Jorge Rivero">
+  <meta property="og:description" content="City briefs where the model's prose is locked to deterministic data badges and audited.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <a class="name" href="/">Jorge Rivero</a>
+    <ul>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/resume.pdf">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main class="cs">
+    <article class="wrap">
+      <a class="back" href="/#work">← All work</a>
+
+      <header class="cs-head">
+        <p class="mono">Case study 03 · Independent · 2026</p>
+        <h1>systems.earth</h1>
+        <p class="deck">Public data about a city's air, health, and schools is free, but it's scattered across federal datasets and written for specialists. I built briefs anyone can read, without letting the model say what the data doesn't.</p>
+      </header>
+
+      <dl class="meta">
+        <div><dt class="mono">Role</dt><dd>Sole designer and engineer</dd></div>
+        <div><dt class="mono">Data</dt><dd>U.S. Census gazetteer, EPA air quality, NCES school districts, and more</dd></div>
+        <div><dt class="mono">Live</dt><dd><a href="https://systems.earth">systems.earth ↗</a></dd></div>
+      </dl>
+
+      <section>
+        <h2>The problem</h2>
+        <p>An LLM can turn a page of federal statistics into a paragraph a city council member will actually read. It can also call a moderate asthma rate "high" because "high" makes a better sentence.</p>
+        <p>For a non-technical reader, a confident wrong sentence is worse than no summary at all.</p>
+      </section>
+
+      <section>
+        <h2>How it works</h2>
+        <ol>
+          <li><strong>Badges are the ground truth.</strong> Each metric gets a status, like "moderate," computed in code from the source data. The model never assigns one.</li>
+          <li><strong>The prose is commentary on the badges.</strong> The LLM writes each section with the badges as fixed inputs, so its characterizations have to agree with them.</li>
+          <li><strong>An audit layer checks that it did.</strong> Briefs are reviewed against their badges, and new metrics go through a research, propose, and approve workbench before they reach a brief.</li>
+          <li><strong>It runs at national scale.</strong> Briefs cover about 30,000 places, with fuzzy search, peer-city rankings, trend language, and cached generation that refreshes in the background.</li>
+        </ol>
+
+        <figure>
+          <svg viewBox="0 0 560 330" role="img" aria-labelledby="d3t d3d">
+            <title id="d3t">How a brief is built</title>
+            <desc id="d3d">Federal datasets feed a deterministic badge layer. The LLM writes prose locked to the badges. An audit layer checks the prose against the badges and sends drift back before the brief is published.</desc>
+            <defs>
+              <marker id="m3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-m"/></marker>
+              <marker id="m3f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-f"/></marker>
+            </defs>
+
+            <rect class="d-box" x="140" y="20" width="260" height="54" rx="6"/>
+            <text class="d-t" x="270" y="44" text-anchor="middle">Federal datasets</text>
+            <text class="d-ts" x="270" y="62" text-anchor="middle">Census, EPA, NCES, and more</text>
+            <path class="d-line" d="M270,74 V94" marker-end="url(#m3)"/>
+
+            <rect class="d-box-accent" x="140" y="96" width="260" height="54" rx="6"/>
+            <text class="d-ta" x="270" y="120" text-anchor="middle">Badge layer</text>
+            <text class="d-ts" x="270" y="138" text-anchor="middle">status computed in code</text>
+            <path class="d-line" d="M270,150 V170" marker-end="url(#m3)"/>
+
+            <rect class="d-box" x="140" y="172" width="260" height="54" rx="6"/>
+            <text class="d-t" x="270" y="196" text-anchor="middle">LLM prose</text>
+            <text class="d-ts" x="270" y="214" text-anchor="middle">badges are fixed inputs</text>
+            <path class="d-line" d="M270,226 V246" marker-end="url(#m3)"/>
+
+            <rect class="d-box-accent" x="140" y="248" width="260" height="54" rx="6"/>
+            <text class="d-ta" x="270" y="272" text-anchor="middle">Audit</text>
+            <text class="d-ts" x="270" y="290" text-anchor="middle">prose must match its badges</text>
+
+            <path class="d-line-fail" d="M400,275 H470 V199 H403" marker-end="url(#m3f)"/>
+            <text class="d-tf" x="478" y="240">drift</text>
+          </svg>
+          <figcaption class="mono">Same principle as the reporting system: code decides what's true, the model decides how to say it.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>What I'm still fixing</h2>
+        <p>A school-district matcher once paired a large city with a much smaller district nearby, and prose can still drift from a badge, like calling a moderate rate "high." Both are exactly the errors the audit layer exists to catch, and catching them is how I tighten it.</p>
+      </section>
+
+      <section>
+        <h2>Why it matters to me</h2>
+        <p class="takeaway">Civic data should be traceable, consistent, and readable by the people who make decisions with it. That's the same job I do with AI inside client operations.</p>
+      </section>
+
+      <nav class="next" aria-label="Back to start">
+        <a href="/work/phantom-work-orders.html">
+          <span class="mono">Back to · 01</span>
+          <h3>Phantom work orders →</h3>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap-wide">
+      <span class="mono">© 2026 Jorge Rivero</span>
+      <span class="mono">San Francisco</span>
+    </div>
+  </footer>
+</body>
+</html>

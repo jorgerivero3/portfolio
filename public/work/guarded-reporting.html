@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports that can't make things up · Jorge Rivero</title>
+  <meta name="description" content="LLM-drafted client reports started inventing figures and causes. I built a reporting system where every number traces back to the data and every claim passes a gate.">
+  <link rel="canonical" href="https://www.codedbyjorge.dev/work/guarded-reporting.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Reports that can't make things up · Jorge Rivero">
+  <meta property="og:description" content="A reporting system where every number has to trace back to the data.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <a class="name" href="/">Jorge Rivero</a>
+    <ul>
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/resume.pdf">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main class="cs">
+    <article class="wrap">
+      <a class="back" href="/#work">← All work</a>
+
+      <header class="cs-head">
+        <p class="mono">Case study 02 · RespondIt AI · 2025–2026</p>
+        <h1>Reports that can't make things up</h1>
+        <p class="deck">Every client gets a report on how their AI agent performed. When I started drafting them with an LLM, the drafts read well and some of them were wrong.</p>
+      </header>
+
+      <dl class="meta">
+        <div><dt class="mono">Role</dt><dd>Built the reporting practice and the system behind it, end to end</dd></div>
+        <div><dt class="mono">Stack</dt><dd>Python, FastAPI, React, LLM APIs, ~829 tests</dd></div>
+        <div><dt class="mono">Outcome</dt><dd>Invented claims blocked before reaching clients; honest headline metrics</dd></div>
+      </dl>
+
+      <section>
+        <h2>Context</h2>
+        <p>The reports go to housing authority leadership. They cover resolution rate, why people called, and where calls went. Leadership uses them to decide staffing and whether the AI is worth paying for.</p>
+        <p>Two problems surfaced. LLM drafts would occasionally state figures that didn't trace to the call data, or offer a cause no one had established. And separately, three changes in how calls were recorded had been quietly moving the headline metric.</p>
+      </section>
+
+      <section>
+        <h2>What I did</h2>
+        <ol>
+          <li><strong>Moved the math out of the model.</strong> Metrics are computed deterministically from the call export. The LLM writes prose around numbers it's given; it doesn't produce them.</li>
+          <li><strong>Put gates between the draft and the client.</strong> A figure-trace gate checks that every number in the draft maps back to the data. A compliance gate blocks unverified causes and quantifiers. Drafts that fail go back; they don't ship.</li>
+          <li><strong>Redefined "resolved."</strong> I audited how the CRM recorded call outcomes and replaced "ended without a transfer" with a stricter definition. Then I restated every client's headline number under it, even where that cut the figure nearly in half.</li>
+          <li><strong>Turned it into a product.</strong> It started as a reusable skill, then became a console with versioned prompts, figure tracing, and a revision thread where a client's reply becomes a tracked revision.</li>
+        </ol>
+
+        <figure>
+          <svg viewBox="0 0 560 480" role="img" aria-labelledby="d2t d2d">
+            <title id="d2t">The reporting pipeline</title>
+            <desc id="d2d">Call export, then deterministic metrics, then an LLM draft. The draft must pass a figure-trace gate and a compliance gate before becoming a client report. Failing drafts are blocked and sent back.</desc>
+            <defs>
+              <marker id="m2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-m"/></marker>
+              <marker id="m2f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-f"/></marker>
+            </defs>
+
+            <rect class="d-box" x="140" y="20" width="260" height="54" rx="6"/>
+            <text class="d-t" x="270" y="44" text-anchor="middle">Call export</text>
+            <text class="d-ts" x="270" y="62" text-anchor="middle">raw records from the CRM</text>
+            <path class="d-line" d="M270,74 V94" marker-end="url(#m2)"/>
+
+            <rect class="d-box" x="140" y="96" width="260" height="54" rx="6"/>
+            <text class="d-t" x="270" y="120" text-anchor="middle">Deterministic metrics</text>
+            <text class="d-ts" x="270" y="138" text-anchor="middle">every figure computed in code</text>
+            <path class="d-line" d="M270,150 V170" marker-end="url(#m2)"/>
+
+            <rect class="d-box" x="140" y="172" width="260" height="54" rx="6"/>
+            <text class="d-t" x="270" y="196" text-anchor="middle">LLM draft</text>
+            <text class="d-ts" x="270" y="214" text-anchor="middle">writes prose, not numbers</text>
+            <path class="d-line" d="M270,226 V246" marker-end="url(#m2)"/>
+
+            <rect class="d-box-accent" x="140" y="248" width="260" height="54" rx="6"/>
+            <text class="d-ta" x="270" y="272" text-anchor="middle">Figure-trace gate</text>
+            <text class="d-ts" x="270" y="290" text-anchor="middle">each number maps to the data</text>
+            <path class="d-line" d="M270,302 V322" marker-end="url(#m2)"/>
+
+            <rect class="d-box-accent" x="140" y="324" width="260" height="54" rx="6"/>
+            <text class="d-ta" x="270" y="348" text-anchor="middle">Compliance gate</text>
+            <text class="d-ts" x="270" y="366" text-anchor="middle">no unverified causes or quantifiers</text>
+            <path class="d-line" d="M270,378 V398" marker-end="url(#m2)"/>
+
+            <rect class="d-box" x="140" y="400" width="260" height="54" rx="6"/>
+            <text class="d-t" x="270" y="424" text-anchor="middle">Client report</text>
+            <text class="d-ts" x="270" y="442" text-anchor="middle">approval required to regenerate</text>
+
+            <path class="d-line-fail" d="M400,275 H470"/>
+            <path class="d-line-fail" d="M400,351 H470 V199 H403" marker-end="url(#m2f)"/>
+            <text class="d-tf" x="478" y="280">blocked</text>
+          </svg>
+          <figcaption class="mono">The model never decides what's true. It decides how to say what the data already established.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Result</h2>
+        <ul>
+          <li>The compliance gate caught an invented cause before an August report went to a client.</li>
+          <li>One forensic report was blocked six times before it shipped with zero violations.</li>
+          <li>Every client's headline metric now uses the same strict definition of "resolved."</li>
+          <li>Reporting went from something I wrote by hand to a system with standing rules: no unverified quantifiers, template what can be templated, withhold rather than guess.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What it taught me</h2>
+        <p class="takeaway">The right response to a flattering number is to find out what it's counting. A report is only useful if leadership can act on it without double-checking it.</p>
+      </section>
+
+      <nav class="next" aria-label="Next case study">
+        <a href="/work/systems-earth.html">
+          <span class="mono">Next · 03</span>
+          <h3>systems.earth →</h3>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap-wide">
+      <span class="mono">© 2026 Jorge Rivero</span>
+      <span class="mono">San Francisco</span>
+    </div>
+  </footer>
+</body>
+</html>
