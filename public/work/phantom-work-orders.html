@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Phantom work orders · Jorge Rivero</title>
+  <title>Phantom work orders, Jorge Rivero</title>
   <meta name="description" content="An AI maintenance agent told callers their repair was booked. About 1 in 10 orders never reached the property system. How I traced it and what the fix required.">
   <link rel="canonical" href="https://www.codedbyjorge.dev/work/phantom-work-orders.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Phantom work orders · Jorge Rivero">
+  <meta property="og:title" content="Phantom work orders, Jorge Rivero">
   <meta property="og:description" content="An AI agent told callers their repair was booked. About 1 in 10 never reached the property system.">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-  <nav class="nav" aria-label="Primary">
+  <nav class="nav frame" aria-label="Primary">
     <a class="name" href="/">Jorge Rivero</a>
     <ul>
       <li><a href="/#work">Work</a></li>
@@ -25,18 +28,18 @@
 
   <main class="cs">
     <article class="wrap">
-      <a class="back" href="/#work">← All work</a>
+      <a class="back" href="/#work">Back to all work</a>
 
       <header class="cs-head">
-        <p class="mono">Case study 01 · RespondIt AI · 2026</p>
+        <p class="kicker">RespondIt AI, 2026</p>
         <h1>Phantom work orders</h1>
         <p class="deck">An AI maintenance agent told callers their repair had been booked. About 1 in 10 of those orders never reached the property system.</p>
       </header>
 
       <dl class="meta">
-        <div><dt class="mono">Role</dt><dd>Found, traced, and sized the failure; designed the fix</dd></div>
-        <div><dt class="mono">Systems</dt><dd>Voice agent, CRM work-order API, Yardi Voyager</dd></div>
-        <div><dt class="mono">Outcome</dt><dd>Classified P0 by the CTO; backfill plan and fix list delivered</dd></div>
+        <div><dt>Role</dt><dd>Found, traced, and sized the failure; designed the fix</dd></div>
+        <div><dt>Systems</dt><dd>Voice agent, CRM work-order API, Yardi Voyager</dd></div>
+        <div><dt>Outcome</dt><dd>Classified P0 by the CTO; backfill plan and fix list delivered</dd></div>
       </dl>
 
       <section>
@@ -93,7 +96,7 @@
             <path class="d-line-fail" d="M60,230 V104 H232 V70" marker-end="url(#m1f)"/>
             <text class="d-ts" x="68" y="124" style="fill:var(--fail)">returns success</text>
           </svg>
-          <figcaption class="mono">Before the fix: the model was honest about what the API told it. The API wasn't.</figcaption>
+          <figcaption>Before the fix: the model was honest about what the API told it. The API wasn't.</figcaption>
         </figure>
       </section>
 
@@ -115,17 +118,17 @@
 
       <nav class="next" aria-label="Next case study">
         <a href="/work/guarded-reporting.html">
-          <span class="mono">Next · 02</span>
-          <h3>Reports that can't make things up →</h3>
+          <span class="label">Next case study</span>
+          <h3>Reports that can't make things up</h3>
         </a>
       </nav>
     </article>
   </main>
 
   <footer>
-    <div class="wrap-wide">
-      <span class="mono">© 2026 Jorge Rivero</span>
-      <span class="mono">San Francisco</span>
+    <div class="frame">
+      <span>© 2026 Jorge Rivero</span>
+      <span>San Francisco</span>
     </div>
   </footer>
 </body>

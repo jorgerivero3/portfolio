@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jorge Rivero · Forward Deployed Engineer & Solutions Architect</title>
-  <meta name="description" content="Forward Deployed Engineer and Solutions Architect in San Francisco. I take AI into messy real-world operations and make sure it tells the truth.">
+  <title>Jorge Rivero, Forward Deployed Engineer and Solutions Architect</title>
+  <meta name="description" content="Forward deployed engineer and solutions architect in San Francisco. I take AI into messy real-world operations and make sure it tells the truth.">
   <link rel="canonical" href="https://www.codedbyjorge.dev/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Jorge Rivero · Forward Deployed Engineer & Solutions Architect">
+  <meta property="og:title" content="Jorge Rivero, Forward Deployed Engineer and Solutions Architect">
   <meta property="og:description" content="I take AI into messy real-world operations and make sure it tells the truth.">
   <meta property="og:url" content="https://www.codedbyjorge.dev/">
   <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131411" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-  <nav class="nav" aria-label="Primary">
+  <nav class="nav frame" aria-label="Primary">
     <a class="name" href="/">Jorge Rivero</a>
     <ul>
       <li><a href="#work">Work</a></li>
@@ -26,155 +29,201 @@
     </ul>
   </nav>
 
-  <main>
-    <div class="wrap">
-      <header class="hero">
-        <p class="mono eyebrow">Forward Deployed Engineer · Solutions Architect · San Francisco</p>
-        <h1>I take AI into messy real-world operations and make sure it <em>tells the truth.</em></h1>
-        <p class="lede">At RespondIt AI I deploy AI voice agents for public housing authorities and property operators, from discovery and contracts through integrations, rollout, and the reports leadership reads. Before that I built backend and cloud systems at AT&amp;T.</p>
-        <ul class="links">
-          <!-- TODO: replace placeholder email -->
-          <li><a href="mailto:your-email@placeholder.com">Email</a></li>
-          <li><a href="https://linkedin.com/in/jorge-cloud-devops">LinkedIn</a></li>
-          <li><a href="https://github.com/jorgerivero3">GitHub</a></li>
-          <li><a href="/resume.pdf">Resume</a></li>
-        </ul>
-      </header>
+  <main class="frame">
+    <header class="hero">
+      <p class="role-line">Forward deployed engineer and solutions architect in San Francisco</p>
+      <h1>I take AI into messy real-world operations and make sure it tells the truth.</h1>
+      <p class="lede">At RespondIt AI I deploy AI voice agents for public housing authorities and property operators, from discovery and contracts through integrations, rollout, and the reports their leadership reads. Before that I built backend and cloud systems at AT&amp;T.</p>
+      <ul class="links">
+        <!-- TODO: replace placeholder email -->
+        <li><a href="mailto:your-email@placeholder.com">Email</a></li>
+        <li><a href="https://linkedin.com/in/jorge-cloud-devops">LinkedIn</a></li>
+        <li><a href="https://github.com/jorgerivero3">GitHub</a></li>
+        <li><a href="/resume.pdf">Resume</a></li>
+      </ul>
+    </header>
 
-      <div class="stats" role="list">
-        <div class="stat" role="listitem">
-          <div class="n">15+</div>
-          <div class="l mono">housing and property organizations deployed or supported</div>
-        </div>
-        <div class="stat" role="listitem">
-          <div class="n">8,000+</div>
-          <div class="l mono">calls a month handled by agents at the flagship client</div>
-        </div>
-        <div class="stat" role="listitem">
-          <div class="n">~1 in 10</div>
-          <div class="l mono">AI work orders found silently failing, then escalated as P0</div>
-        </div>
+    <div class="figures">
+      <div class="fig">
+        <div class="num">15+ <button class="cite" aria-expanded="false" aria-controls="src-1" aria-label="Show source for 15+">1</button></div>
+        <p class="what">housing and property organizations I've deployed or supported</p>
+        <p class="source" id="src-1" hidden><b>Where this comes from</b>Organizations where I built the agent, supported a live deployment, or ran a pre-deployment trial, May 2025 to September 2026. Sales demos alone aren't counted.</p>
       </div>
+      <div class="fig">
+        <div class="num">8,000+ <button class="cite" aria-expanded="false" aria-controls="src-2" aria-label="Show source for 8,000+">2</button></div>
+        <p class="what">calls a month handled by the agents at our flagship client</p>
+        <p class="source" id="src-2" hidden><b>Where this comes from</b>Inbound calls on the flagship client's main line, from call exports I reconciled against the product dashboard, April to August 2026.</p>
+      </div>
+      <div class="fig">
+        <div class="num">~1 in 10 <button class="cite" aria-expanded="false" aria-controls="src-3" aria-label="Show source for about 1 in 10">3</button></div>
+        <p class="what">AI-created work orders I found silently failing, escalated as P0</p>
+        <p class="source" id="src-3" hidden><b>Where this comes from</b>Work orders at a large housing authority that the agent confirmed but that never reached the property system, over a 30-day window in 2026. Approximate.</p>
+      </div>
+    </div>
+    <p class="figures-note">Every number on this site has a source. Tap one to see it.</p>
 
-      <section id="work" aria-labelledby="work-label">
-        <p class="mono section-label" id="work-label">Selected work</p>
-        <ul class="work">
-          <li>
+    <section class="band" id="work" aria-labelledby="work-h">
+      <div class="rail"><h2 id="work-h">Selected work</h2></div>
+      <div class="body">
+        <ul class="exhibits">
+          <li class="exhibit">
             <a href="/work/phantom-work-orders.html">
-              <span class="mono idx">01</span>
-              <span>
+              <div>
                 <h3>Phantom work orders</h3>
                 <p>An AI agent told callers their repair was booked. About 1 in 10 never reached the property system. I traced why and designed the fix.</p>
-                <span class="mono">RespondIt AI · 2026</span>
-              </span>
-              <span class="arrow" aria-hidden="true">→</span>
+                <p class="where">RespondIt AI, 2026</p>
+                <span class="read">Read the case study</span>
+              </div>
+              <div class="thumb" aria-hidden="true">
+                <svg viewBox="0 0 260 150">
+                  <rect class="d-box" x="95" y="8" width="70" height="26" rx="4"/>
+                  <path class="d-line" d="M130,34 V52"/>
+                  <rect class="d-box" x="95" y="52" width="70" height="26" rx="4"/>
+                  <path class="d-line" d="M130,78 V94 H62 V110"/>
+                  <path class="d-line-accent" d="M130,94 H198 V110"/>
+                  <rect class="d-box-fail" x="22" y="110" width="80" height="30" rx="4"/>
+                  <rect class="d-box-accent" x="158" y="110" width="80" height="30" rx="4"/>
+                  <path class="d-line-fail" d="M30,110 V21 H93"/>
+                </svg>
+              </div>
             </a>
           </li>
-          <li>
+          <li class="exhibit">
             <a href="/work/guarded-reporting.html">
-              <span class="mono idx">02</span>
-              <span>
+              <div>
                 <h3>Reports that can't make things up</h3>
                 <p>LLM-drafted client reports started inventing figures and causes. I built a reporting system where every number has to trace back to the data.</p>
-                <span class="mono">RespondIt AI · 2025–2026</span>
-              </span>
-              <span class="arrow" aria-hidden="true">→</span>
+                <p class="where">RespondIt AI, 2025 to 2026</p>
+                <span class="read">Read the case study</span>
+              </div>
+              <div class="thumb" aria-hidden="true">
+                <svg viewBox="0 0 260 150">
+                  <rect class="d-box" x="60" y="6" width="120" height="18" rx="3"/>
+                  <rect class="d-box" x="60" y="30" width="120" height="18" rx="3"/>
+                  <rect class="d-box" x="60" y="54" width="120" height="18" rx="3"/>
+                  <rect class="d-box-accent" x="60" y="78" width="120" height="18" rx="3"/>
+                  <rect class="d-box-accent" x="60" y="102" width="120" height="18" rx="3"/>
+                  <rect class="d-box" x="60" y="126" width="120" height="18" rx="3"/>
+                  <path class="d-line-fail" d="M180,87 H214 M180,111 H214 V63 H182"/>
+                </svg>
+              </div>
             </a>
           </li>
-          <li>
+          <li class="exhibit">
             <a href="/work/systems-earth.html">
-              <span class="mono idx">03</span>
-              <span>
+              <div>
                 <h3>systems.earth</h3>
-                <p>Environmental briefs for about 30,000 U.S. places, where the model's prose is locked to deterministic data badges and audited.</p>
-                <span class="mono">Independent · 2026</span>
-              </span>
-              <span class="arrow" aria-hidden="true">→</span>
+                <p>Environmental briefs for about 30,000 U.S. places, where the model's prose is locked to data badges computed in code, then audited.</p>
+                <p class="where">Independent project, 2026</p>
+                <span class="read">Read the case study</span>
+              </div>
+              <div class="thumb" aria-hidden="true">
+                <svg viewBox="0 0 260 150" id="badge-grid"></svg>
+              </div>
             </a>
           </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section aria-labelledby="role-h">
-        <p class="mono section-label">Current role</p>
-        <h2 id="role-h">Solutions Architect, RespondIt AI</h2>
-        <p class="mono" style="margin-bottom:20px">May 2025 – present · San Francisco</p>
-        <p>I sit between the client and engineering. I learn how a housing authority actually runs: its phone lines, its property systems, its policies, the questions residents call about. Then I turn that into an AI agent that works there, and I stay on to measure whether it does.</p>
+    <section class="band now" aria-labelledby="now-h">
+      <div class="rail"><h2 id="now-h">Now</h2></div>
+      <div class="body">
+        <h3>Solutions Architect, RespondIt AI</h3>
+        <p class="when">May 2025 to present, San Francisco</p>
+        <p class="intro">I sit between the client and engineering. I learn how a housing authority actually runs: its phone lines, its property systems, its policies, the questions residents call about. Then I turn that into an AI agent that works there, and I stay on to measure whether it does.</p>
         <ul class="did">
-          <li>Discovery and scoping with housing authority executives, IT directors, and national property operators</li>
-          <li>Built agent knowledge bases, call flows, and integrations, including Yardi Voyager across a 63-property crosswalk</li>
-          <li>Automated phone-line provisioning: numbers, per-property call flows, webhooks, and fallbacks from a single sheet</li>
-          <li>Ran UAT, rollout, and call-taker training for a new call-center product with live translation</li>
-          <li>Drafted MSAs and SOWs, supported RFP responses, and demoed to agency leadership and a mayor's office</li>
-          <li>Set the company's client reporting standards, including a stricter definition of what counts as "AI-resolved"</li>
+          <li><strong>Discovery and scoping</strong>With housing authority executives, IT directors, and national property operators</li>
+          <li><strong>Agents and integrations</strong>Knowledge bases, call flows, and Yardi Voyager across a 63-property crosswalk</li>
+          <li><strong>Provisioning automation</strong>Phone numbers, per-property call flows, webhooks, and fallbacks built from a single sheet</li>
+          <li><strong>Rollout and training</strong>UAT, launch, and call-taker training for a call-center product with live translation</li>
+          <li><strong>Contracts and sales</strong>MSAs and SOWs, RFP responses, and demos for agency leadership and a mayor's office</li>
+          <li><strong>Reporting standards</strong>The company's client reports, including a stricter definition of "AI-resolved"</li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section id="experience" aria-labelledby="exp-label">
-        <p class="mono section-label" id="exp-label">Experience</p>
+    <section class="band" id="experience" aria-labelledby="exp-h">
+      <div class="rail"><h2 id="exp-h">Before</h2></div>
+      <div class="body">
         <ol class="timeline">
           <li>
-            <span class="mono when">2025 – now</span>
-            <div>
-              <h3>RespondIt AI</h3>
-              <p class="role">Solutions Architect</p>
-              <p>AI voice agents, integrations, and reporting for public housing and property management.</p>
-            </div>
-          </li>
-          <li>
-            <span class="mono when">2021 – 2024</span>
+            <span class="yrs">2021 to 2024</span>
             <div>
               <h3>AT&amp;T</h3>
-              <p class="role">Software Engineer → Senior Software Engineer</p>
-              <p>Built an AI-assisted vulnerability remediation tool, MuleSoft integrations between legacy and modern systems, and Terraform pipelines on Azure for 5G network functions.</p>
+              <p class="title">Software Engineer to Senior Software Engineer</p>
+              <p class="desc">Built an AI-assisted vulnerability remediation tool, MuleSoft integrations between legacy and modern systems, and Terraform pipelines on Azure for 5G network functions.</p>
             </div>
           </li>
           <li>
-            <span class="mono when">2020 – 2022</span>
+            <span class="yrs">2020 to 2022</span>
             <div>
               <h3>Gathr</h3>
-              <p class="role">Software Engineer</p>
-              <p>Moved messaging services from Python to Go and built GCP and Firebase backends for Flutter apps.</p>
+              <p class="title">Software Engineer</p>
+              <p class="desc">Moved messaging services from Python to Go and built GCP and Firebase backends for Flutter apps.</p>
             </div>
           </li>
           <li>
-            <span class="mono when">Education</span>
+            <span class="yrs">Education</span>
             <div>
               <h3>The University of Texas at Austin</h3>
-              <p class="role">B.A. · Elements of Computing certificate</p>
+              <p class="title">B.A., with the Elements of Computing certificate</p>
+            </div>
+          </li>
+          <li>
+            <span class="yrs">On the side</span>
+            <div>
+              <h3><a href="https://layers-sf.replit.app">Layers</a></h3>
+              <p class="desc">Sun or shade, jacket or shorts. A microclimate forecast for 15 San Francisco neighborhoods using apparent temperature.</p>
             </div>
           </li>
         </ol>
-      </section>
+      </div>
+    </section>
 
-      <section aria-labelledby="also-label">
-        <p class="mono section-label" id="also-label">Also built</p>
-        <ul class="work">
-          <li>
-            <a href="https://layers-sf.replit.app">
-              <span class="mono idx">—</span>
-              <span>
-                <h3>Layers</h3>
-                <p>Sun or shade, jacket or shorts. A microclimate forecast for 15 San Francisco neighborhoods using apparent temperature.</p>
-              </span>
-              <span class="arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="contact" aria-labelledby="contact-h">
-        <p class="big" id="contact-h">Hiring for a forward deployed or solutions role? I'd like to hear about it.</p>
-        <a class="email" href="mailto:your-email@placeholder.com">your-email@placeholder.com</a>
-      </section>
-    </div>
+    <section class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Hiring for a forward deployed or solutions role? Let's talk.</h2>
+      <a class="email" href="mailto:your-email@placeholder.com">your-email@placeholder.com</a>
+    </section>
   </main>
 
   <footer>
-    <div class="wrap-wide">
-      <span class="mono">© 2026 Jorge Rivero</span>
-      <span class="mono">San Francisco</span>
+    <div class="frame">
+      <span>© 2026 Jorge Rivero</span>
+      <span>San Francisco</span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.cite').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var src = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        src.hidden = open;
+      });
+    });
+
+    (function () {
+      var svg = document.getElementById('badge-grid');
+      if (!svg) return;
+      var ns = 'http://www.w3.org/2000/svg';
+      var pattern = 'aaqaaqqaaafaaqaaqaaaqafaqaaaqaaaqqaaqaaafaaaqaaqaaqaafqaaaqaaaqqaa';
+      var i = 0;
+      for (var r = 0; r < 6; r++) {
+        for (var c = 0; c < 11; c++) {
+          var k = pattern[i++ % pattern.length];
+          var rect = document.createElementNS(ns, 'rect');
+          rect.setAttribute('x', 6 + c * 23);
+          rect.setAttribute('y', 6 + r * 24);
+          rect.setAttribute('width', 18);
+          rect.setAttribute('height', 16);
+          rect.setAttribute('rx', 3);
+          rect.setAttribute('class', k === 'a' ? 'd-box-accent' : k === 'f' ? 'd-box-fail' : 'd-box');
+          svg.appendChild(rect);
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
