@@ -208,21 +208,19 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .exhibit a { grid-template-columns: 1fr; gap: 20px; }
   .thumb { max-width: 360px; }
 }
+@media (max-width: 820px) {
+  .figures { grid-template-columns: 1fr; }
+  .fig, .fig + .fig { padding: 22px 0 24px; border-right: 0; border-bottom: 1px solid var(--rule); }
+  .fig:last-child { border-bottom: 0; }
+}
 @media (max-width: 640px) {
   :root { --gutter: 16px; }
   body { font-size: 17px; }
   .nav ul { gap: 14px; font-size: 15px; }
   .nav .name { gap: 8px; font-size: 15px; }
-}
-@media (max-width: 400px) {
-  .nav ul { gap: 12px; font-size: 14px; }
-  .nav .name { font-size: 14px; }
   .nav .mark { width: 22px; height: 22px; }
   .hero { padding: 16px 0 48px; }
   .hero .lede { font-size: 18px; }
-  .figures { grid-template-columns: 1fr; }
-  .fig, .fig + .fig { padding: 22px 0 24px; border-right: 0; border-bottom: 1px solid var(--rule); }
-  .fig:last-child { border-bottom: 0; }
   .did { grid-template-columns: 1fr; }
   .timeline li { grid-template-columns: 1fr; gap: 4px; }
   .exhibit h3, .now h3 { font-size: 26px; }
@@ -230,4 +228,8 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .cs-head .deck { font-size: 19px; }
   .takeaway { font-size: 21px; }
   figure { padding: 16px; margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); border-radius: 0; }
+}
+@media (max-width: 400px) {
+  .nav ul { gap: 12px; font-size: 14px; }
+  .nav .name { font-size: 14px; }
 }
