@@ -23,14 +23,16 @@
   <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-  <nav class="nav frame" aria-label="Primary">
-    <a class="name" href="/"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 10H8v44h9M47 10h9v44h-9" stroke="var(--forest)" stroke-width="6" fill="none"/><g fill="var(--ink)"><path transform="translate(21.925 45) scale(0.01806 -0.01806)" d="M582 -26Q428 -26 318.0 20.0Q208 66 138.0 162.5Q68 259 33 409L342 475Q363 351 413.0 288.5Q463 226 573 226Q678 226 726.0 283.0Q774 340 774 452V1179H204V1440H1083V452Q1083 310 1040.5 217.0Q998 124 926.0 70.5Q854 17 765.0 -4.5Q676 -26 582 -26Z"/></g></svg><span>Jorge Rivero</span></a>
-    <ul>
-      <li><a href="/#work">Work</a></li>
-      <li><a href="/#experience">Experience</a></li>
-      <li><a href="/resume.pdf">Resume</a></li>
-    </ul>
-  </nav>
+  <header class="topbar">
+    <nav class="nav frame" aria-label="Primary">
+      <a class="name" href="/"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 10H8v44h9M47 10h9v44h-9" stroke="var(--forest)" stroke-width="6" fill="none"/><g fill="var(--ink)"><path transform="translate(21.925 45) scale(0.01806 -0.01806)" d="M582 -26Q428 -26 318.0 20.0Q208 66 138.0 162.5Q68 259 33 409L342 475Q363 351 413.0 288.5Q463 226 573 226Q678 226 726.0 283.0Q774 340 774 452V1179H204V1440H1083V452Q1083 310 1040.5 217.0Q998 124 926.0 70.5Q854 17 765.0 -4.5Q676 -26 582 -26Z"/></g></svg><span>Jorge Rivero</span></a>
+      <ul>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/resume.pdf">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="cs">
     <article class="wrap">
@@ -123,5 +125,6 @@
       <span>San Francisco</span>
     </div>
   </footer>
+<script>(function(){var t=document.querySelector('.topbar');if(!t)return;function f(){t.classList.toggle('scrolled',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();</script>
 </body>
 </html>
