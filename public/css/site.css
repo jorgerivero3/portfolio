@@ -31,6 +31,21 @@
   }
 }
 
+:root[data-theme="dark"] {
+  --paper: #131411;
+  --ink: #ecebe5;
+  --ink-2: #c3c3b9;
+  --quiet: #94958b;
+  --rule: #2a2b26;
+  --rule-strong: #3b3c35;
+  --forest: #93c0a4;
+  --forest-tint: #1b261f;
+  --fail: #e08a78;
+  --fail-tint: #2c1d19;
+  color-scheme: dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
+
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
@@ -73,6 +88,17 @@ h1, h2, h3 { font-weight: 600; margin: 0; }
 .nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .nav ul a { color: var(--ink-2); text-decoration: none; }
 .nav ul a:hover { color: var(--ink); }
+.nav .right { display: flex; align-items: center; gap: 20px; }
+.theme { width: 34px; height: 34px; display: grid; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--ink-2); cursor: pointer; padding: 0; }
+.theme:hover { color: var(--ink); background: color-mix(in srgb, var(--ink) 6%, transparent); }
+.theme svg { width: 18px; height: 18px; }
+.theme .sun { display: none; }
+:root[data-theme="dark"] .theme .sun { display: block; }
+:root[data-theme="dark"] .theme .moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme .sun { display: block; }
+  :root:not([data-theme="light"]) .theme .moon { display: none; }
+}
 
 /* hero */
 .hero { position: relative; min-height: calc(100vh - 64px); min-height: calc(100svh - 64px); display: flex; flex-direction: column; justify-content: center; padding: 24px 0 96px; }
@@ -230,6 +256,8 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   :root { --gutter: 16px; }
   body { font-size: 17px; }
   .nav ul { gap: 14px; font-size: 15px; }
+  .nav .right { gap: 8px; }
+  .theme { width: 30px; height: 30px; }
   .nav .name { gap: 8px; font-size: 15px; }
   .nav .mark { width: 22px; height: 22px; }
   .hero { padding: 16px 0 88px; }
@@ -244,6 +272,10 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   figure { padding: 16px; margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); border-radius: 0; }
 }
 @media (max-width: 400px) {
-  .nav ul { gap: 12px; font-size: 14px; }
-  .nav .name { font-size: 14px; }
+  .nav { gap: 8px; }
+  .nav ul { gap: 11px; font-size: 14px; }
+  .nav .name { font-size: 14px; gap: 6px; }
+  .nav .mark { width: 20px; height: 20px; }
+  .nav .right { gap: 2px; }
+  .theme { width: 28px; height: 28px; margin-right: -4px; }
 }

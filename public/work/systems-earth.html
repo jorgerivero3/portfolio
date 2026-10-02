@@ -20,17 +20,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
   <header class="topbar">
     <nav class="nav frame" aria-label="Primary">
       <a class="name" href="/"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M17 10H8v44h9M47 10h9v44h-9" stroke="var(--forest)" stroke-width="6" fill="none"/><g fill="var(--ink)"><path transform="translate(21.925 45) scale(0.01806 -0.01806)" d="M582 -26Q428 -26 318.0 20.0Q208 66 138.0 162.5Q68 259 33 409L342 475Q363 351 413.0 288.5Q463 226 573 226Q678 226 726.0 283.0Q774 340 774 452V1179H204V1440H1083V452Q1083 310 1040.5 217.0Q998 124 926.0 70.5Q854 17 765.0 -4.5Q676 -26 582 -26Z"/></g></svg><span>Jorge Rivero</span></a>
+      <div class="right">
       <ul>
         <li><a href="/#work">Work</a></li>
         <li><a href="/#experience">Experience</a></li>
         <li><a href="/resume.pdf">Resume</a></li>
       </ul>
+      <button class="theme" type="button" aria-label="Switch to dark mode"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      </div>
     </nav>
   </header>
 
@@ -126,5 +130,18 @@
     </div>
   </footer>
 <script>(function(){var t=document.querySelector('.topbar');if(!t)return;function f(){t.classList.toggle('scrolled',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();</script>
+<script>(function(){
+  var root=document.documentElement, btn=document.querySelector('.theme'), mq=window.matchMedia('(prefers-color-scheme: dark)');
+  function current(){var t=root.getAttribute('data-theme');return t||(mq.matches?'dark':'light');}
+  function label(){if(btn)btn.setAttribute('aria-label',current()==='dark'?'Switch to light mode':'Switch to dark mode');}
+  label();
+  if(btn)btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark', sys=mq.matches?'dark':'light';
+    if(next===sys){root.removeAttribute('data-theme');try{localStorage.removeItem('theme');}catch(e){}}
+    else{root.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}}
+    label();
+  });
+  mq.addEventListener&&mq.addEventListener('change',label);
+})();</script>
 </body>
 </html>
