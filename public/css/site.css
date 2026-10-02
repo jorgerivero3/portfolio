@@ -271,11 +271,10 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .takeaway { font-size: 21px; }
   figure { padding: 16px; margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); border-radius: 0; }
 }
-@media (max-width: 400px) {
-  .nav { gap: 8px; }
-  .nav ul { gap: 11px; font-size: 14px; }
-  .nav .name { font-size: 14px; gap: 6px; }
-  .nav .mark { width: 20px; height: 20px; }
-  .nav .right { gap: 2px; }
-  .theme { width: 28px; height: 28px; margin-right: -4px; }
+@media (max-width: 420px) {
+  .nav .name span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .nav .mark { width: 26px; height: 26px; }
+  .nav ul { gap: 16px; font-size: 15px; }
+  .nav .right { gap: 8px; }
+  .theme { margin-right: -6px; }
 }
