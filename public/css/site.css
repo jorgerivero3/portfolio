@@ -75,7 +75,20 @@ h1, h2, h3 { font-weight: 600; margin: 0; }
 .nav ul a:hover { color: var(--ink); }
 
 /* hero */
-.hero { padding: 32px 0 72px; }
+.hero { position: relative; min-height: calc(100vh - 64px); min-height: calc(100svh - 64px); display: flex; flex-direction: column; justify-content: center; padding: 24px 0 96px; }
+.cue { position: absolute; left: 50%; bottom: 28px; width: 40px; height: 40px; margin-left: -20px; display: grid; place-items: center; color: var(--quiet); border-radius: 50%; text-decoration: none; transition: opacity .3s ease, color .2s ease; }
+.cue:hover { color: var(--forest); }
+.cue svg { width: 22px; height: 22px; }
+.cue.gone { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .cue svg { animation: nudge 2.4s ease-in-out infinite; }
+  @keyframes nudge { 0%, 70%, 100% { transform: translateY(0); } 85% { transform: translateY(4px); } }
+}
+.intro { padding: 88px 0 0; }
+.intro .lede { margin-bottom: 24px; }
+.intro .links { margin-bottom: 56px; }
+.js-reveal .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+.js-reveal .reveal.in { opacity: 1; transform: none; }
 .hero .role-line { font-size: 17px; color: var(--ink-2); margin: 0 0 16px; }
 .hero h1 {
   font-size: clamp(42px, 7.4vw, 92px);
@@ -85,7 +98,7 @@ h1, h2, h3 { font-weight: 600; margin: 0; }
   max-width: 15ch;
   margin: 0 0 40px;
 }
-.hero .lede { font-size: 20px; line-height: 1.55; color: var(--ink-2); max-width: 36em; margin: 0 0 28px; }
+.lede { font-size: 20px; line-height: 1.55; color: var(--ink-2); max-width: 36em; margin: 0 0 28px; }
 .links { display: flex; flex-wrap: wrap; gap: 10px 28px; list-style: none; margin: 0; padding: 0; font-size: 17px; font-weight: 500; }
 
 /* figures with provenance */
@@ -219,8 +232,9 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .nav ul { gap: 14px; font-size: 15px; }
   .nav .name { gap: 8px; font-size: 15px; }
   .nav .mark { width: 22px; height: 22px; }
-  .hero { padding: 16px 0 48px; }
-  .hero .lede { font-size: 18px; }
+  .hero { padding: 16px 0 88px; }
+  .intro { padding-top: 56px; }
+  .lede { font-size: 18px; }
   .did { grid-template-columns: 1fr; }
   .timeline li { grid-template-columns: 1fr; gap: 4px; }
   .exhibit h3, .now h3 { font-size: 26px; }

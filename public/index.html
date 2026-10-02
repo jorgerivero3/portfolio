@@ -39,8 +39,16 @@
 
   <main class="frame">
     <header class="hero">
-      <p class="role-line">Forward Deployed Engineer</p>
-      <h1>Between the customer and the code.</h1>
+      <div class="hero-inner">
+        <p class="role-line">Forward Deployed Engineer</p>
+        <h1>Between the customer and the code.</h1>
+      </div>
+      <a class="cue" href="#intro" aria-label="Scroll to more">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </header>
+
+    <section class="intro reveal" id="intro" aria-label="Summary">
       <p class="lede">Most recently a Solutions Architect at RespondIt AI, where I deployed AI voice agents for public housing authorities and property operators, from discovery and contracts through integrations, rollout, and the reports their leadership reads. Before that I built backend and cloud systems at AT&amp;T.</p>
       <ul class="links">
         <li><a href="mailto:jorge@jorgecoded.dev">Email</a></li>
@@ -48,28 +56,27 @@
         <li><a href="https://github.com/jorgerivero3">GitHub</a></li>
         <li><a href="/resume.pdf">Resume</a></li>
       </ul>
-    </header>
+      <div class="figures">
+        <div class="fig">
+          <div class="num">15+ <button class="cite" aria-expanded="false" aria-controls="src-1" aria-label="Show source for 15+">1</button></div>
+          <p class="what">housing and property organizations I've deployed or supported</p>
+          <p class="source" id="src-1" hidden><b>Where this comes from</b>Organizations where I built the agent, supported a live deployment, or ran a pre-deployment trial, May 2025 to September 2026. Sales demos alone aren't counted.</p>
+        </div>
+        <div class="fig">
+          <div class="num">8,000+ <button class="cite" aria-expanded="false" aria-controls="src-2" aria-label="Show source for 8,000+">2</button></div>
+          <p class="what">calls a month handled by the agents at the flagship client</p>
+          <p class="source" id="src-2" hidden><b>Where this comes from</b>Inbound calls on the flagship client's main line, from call exports I reconciled against the product dashboard, April to August 2026.</p>
+        </div>
+        <div class="fig">
+          <div class="num">~1 in 10 <button class="cite" aria-expanded="false" aria-controls="src-3" aria-label="Show source for about 1 in 10">3</button></div>
+          <p class="what">AI-created work orders I found silently failing, escalated as P0</p>
+          <p class="source" id="src-3" hidden><b>Where this comes from</b>Work orders at a large housing authority that the agent confirmed but that never reached the property system, over a 30-day window in 2026. Approximate.</p>
+        </div>
+      </div>
+      <p class="figures-note">Each of these numbers has a source. Tap one to see it.</p>
+    </section>
 
-    <div class="figures">
-      <div class="fig">
-        <div class="num">15+ <button class="cite" aria-expanded="false" aria-controls="src-1" aria-label="Show source for 15+">1</button></div>
-        <p class="what">housing and property organizations I've deployed or supported</p>
-        <p class="source" id="src-1" hidden><b>Where this comes from</b>Organizations where I built the agent, supported a live deployment, or ran a pre-deployment trial, May 2025 to September 2026. Sales demos alone aren't counted.</p>
-      </div>
-      <div class="fig">
-        <div class="num">8,000+ <button class="cite" aria-expanded="false" aria-controls="src-2" aria-label="Show source for 8,000+">2</button></div>
-        <p class="what">calls a month handled by the agents at the flagship client</p>
-        <p class="source" id="src-2" hidden><b>Where this comes from</b>Inbound calls on the flagship client's main line, from call exports I reconciled against the product dashboard, April to August 2026.</p>
-      </div>
-      <div class="fig">
-        <div class="num">~1 in 10 <button class="cite" aria-expanded="false" aria-controls="src-3" aria-label="Show source for about 1 in 10">3</button></div>
-        <p class="what">AI-created work orders I found silently failing, escalated as P0</p>
-        <p class="source" id="src-3" hidden><b>Where this comes from</b>Work orders at a large housing authority that the agent confirmed but that never reached the property system, over a 30-day window in 2026. Approximate.</p>
-      </div>
-    </div>
-    <p class="figures-note">Each of these numbers has a source. Tap one to see it.</p>
-
-    <section class="band" id="work" aria-labelledby="work-h">
+    <section class="band reveal" id="work" aria-labelledby="work-h">
       <div class="rail"><h2 id="work-h">Selected work</h2></div>
       <div class="body">
         <ul class="exhibits">
@@ -133,7 +140,7 @@
       </div>
     </section>
 
-    <section class="band now" id="experience" aria-labelledby="now-h">
+    <section class="band now reveal" id="experience" aria-labelledby="now-h">
       <div class="rail"><h2 id="now-h">Most recent</h2></div>
       <div class="body">
         <h3>Solutions Architect, RespondIt AI</h3>
@@ -150,7 +157,7 @@
       </div>
     </section>
 
-    <section class="band" id="before" aria-labelledby="exp-h">
+    <section class="band reveal" id="before" aria-labelledby="exp-h">
       <div class="rail"><h2 id="exp-h">Before</h2></div>
       <div class="body">
         <ol class="timeline">
@@ -188,7 +195,7 @@
       </div>
     </section>
 
-    <section class="contact" aria-labelledby="contact-h">
+    <section class="contact reveal" aria-labelledby="contact-h">
       <h2 id="contact-h">Hiring for a forward deployed or solutions role? Let's talk.</h2>
       <a class="email" href="mailto:jorge@jorgecoded.dev">jorge@jorgecoded.dev</a>
     </section>
@@ -233,5 +240,15 @@
     })();
   </script>
 <script>(function(){var t=document.querySelector('.topbar');if(!t)return;function f(){t.classList.toggle('scrolled',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();</script>
+<script>(function(){
+  var d=document.documentElement, cue=document.querySelector('.cue');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function onScroll(){ if(cue) cue.classList.toggle('gone', window.scrollY>40); }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+  if(reduce || !('IntersectionObserver' in window)) return;
+  d.classList.add('js-reveal');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -12% 0px',threshold:0.05});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();</script>
 </body>
 </html>
