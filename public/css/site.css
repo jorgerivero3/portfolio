@@ -293,13 +293,9 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
 .feature-deck { font-size: 19px; line-height: 1.55; color: var(--ink-2); margin: 0 0 16px; max-width: 30em; }
 .feature .stack { font-size: 15px; color: var(--quiet); margin: 0 0 22px; }
 .feature-thumb { display: block; padding: 24px; }
-.side-projects { list-style: none; margin: 0; padding: 0; }
-.side-projects li { border-top: 1px solid var(--rule); padding: 22px 0; }
-.side-projects li:last-child { border-bottom: 1px solid var(--rule); }
-.side-projects h3 { font-size: 21px; letter-spacing: -0.015em; margin: 0 0 4px; }
-.side-projects p { color: var(--ink-2); margin: 0; font-size: 16px; max-width: 38em; }
+.feature + .feature { border-top-width: 1px; border-top-color: var(--rule); }
+.feature:last-child { border-bottom: 1px solid var(--rule); }
 @media (max-width: 900px) {
   .feature { grid-template-columns: 1fr; gap: 28px; }
   .feature-thumb { max-width: 420px; }
 }
-.side-projects .stack { font-size: 15px; color: var(--quiet); margin: 8px 0 0; }
