@@ -283,3 +283,22 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .nav .right { gap: 8px; }
   .theme { margin-right: -6px; }
 }
+
+/* projects */
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; border-top: 2px solid var(--ink); padding: 36px 0 40px; }
+.feature .where { font-size: 15px; color: var(--quiet); margin: 0 0 10px; }
+.feature h3 { font-size: clamp(40px, 5vw, 56px); line-height: 1; letter-spacing: -0.04em; margin: 0 0 18px; }
+.feature h3 a { color: var(--ink); text-decoration: none; }
+.feature h3 a:hover { color: var(--forest); }
+.feature-deck { font-size: 19px; line-height: 1.55; color: var(--ink-2); margin: 0 0 16px; max-width: 30em; }
+.feature .stack { font-size: 15px; color: var(--quiet); margin: 0 0 22px; }
+.feature-thumb { display: block; padding: 24px; }
+.side-projects { list-style: none; margin: 0; padding: 0; }
+.side-projects li { border-top: 1px solid var(--rule); padding: 22px 0; }
+.side-projects li:last-child { border-bottom: 1px solid var(--rule); }
+.side-projects h3 { font-size: 21px; letter-spacing: -0.015em; margin: 0 0 4px; }
+.side-projects p { color: var(--ink-2); margin: 0; font-size: 16px; max-width: 38em; }
+@media (max-width: 900px) {
+  .feature { grid-template-columns: 1fr; gap: 28px; }
+  .feature-thumb { max-width: 420px; }
+}

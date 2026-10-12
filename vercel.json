@@ -1,12 +1,19 @@
 {
-    "version": 2,
-    "routes": [
-      {
-        "src": "/index.html",
-        "headers": {
-          "Cache-Control": "public, max-age=3600, must-revalidate"
-        },
-        "dest": "/index.html"
+  "version": 2,
+  "routes": [
+    {
+      "src": "/work/systems-earth(\\.html)?",
+      "status": 301,
+      "headers": {
+        "Location": "/work/aura.html"
       }
-    ]
-  }
+    },
+    {
+      "src": "/index.html",
+      "headers": {
+        "Cache-Control": "public, max-age=3600, must-revalidate"
+      },
+      "dest": "/index.html"
+    }
+  ]
+}
