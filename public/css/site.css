@@ -299,3 +299,12 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .feature { grid-template-columns: 1fr; gap: 28px; }
   .feature-thumb { max-width: 420px; }
 }
+
+/* role progression */
+.timeline .ladder { list-style: none; margin: 6px 0 14px; padding: 0 0 0 18px; position: relative; max-width: 36rem; }
+.timeline .ladder::before { content: ""; position: absolute; left: 3.5px; top: 14px; bottom: 14px; border-left: 1px solid var(--rule-strong); }
+.timeline .ladder li { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 4px 0; border: 0; font-size: 16px; line-height: 1.45; color: var(--ink-2); }
+.timeline .ladder li::before { content: ""; position: absolute; left: -18px; top: 11px; width: 8px; height: 8px; box-sizing: border-box; border-radius: 50%; background: var(--paper); border: 1.5px solid var(--quiet); }
+.timeline .ladder li:first-child::before { background: var(--forest); border-color: var(--forest); }
+.timeline .ladder li:first-child .r { color: var(--ink); font-weight: 500; }
+.timeline .ladder .d { color: var(--quiet); font-feature-settings: "tnum" 1; white-space: nowrap; font-size: 15px; }
