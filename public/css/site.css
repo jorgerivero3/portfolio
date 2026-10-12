@@ -302,3 +302,4 @@ figcaption { margin-top: 18px; font-size: 15px; color: var(--quiet); text-align:
   .feature { grid-template-columns: 1fr; gap: 28px; }
   .feature-thumb { max-width: 420px; }
 }
+.side-projects .stack { font-size: 15px; color: var(--quiet); margin: 8px 0 0; }
