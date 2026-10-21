@@ -106,8 +106,29 @@
       </section>
 
       <section>
-        <h2>What I'm still fixing</h2>
-        <p>A school-district matcher once paired a large city with a much smaller district nearby, and prose can still drift from a badge, like calling a moderate rate "high." Both are exactly the errors the audit layer exists to catch, and catching them is how I tighten it.</p>
+        <h2>Where it stands</h2>
+        <p class="asof">Updated October 2026</p>
+        <ul>
+          <li><strong>Two views, one name.</strong> The project started as Citywide, then systems.earth. It's now Aura: Aura Local for a single place, Aura Global for planetary indicators.</li>
+          <li><strong>Slow data and live data are kept apart.</strong> Briefs and badges refresh on a slower cadence that matches how often the source data actually changes. Live readings, like current air quality, sit in a separate "Now" panel, so a brief never shifts because of one bad afternoon.</li>
+          <li><strong>Provenance lives in the citations.</strong> Source, scope, and year sit in citation metadata and card footnotes instead of cluttering the prose, and the verifier checks them just as strictly.</li>
+          <li><strong>Four flagship cities.</strong> San Francisco, El Paso, Austin, and New York get the deepest data work and a manual review before their briefs publish. Every other place still generates on demand.</li>
+          <li><strong>Cities that span counties.</strong> New York gets one citywide page that uses city-level data where it exists, with a borough breakdown for metrics only published by county, like social vulnerability.</li>
+          <li><strong>Water is next.</strong> Hand-measured USGS well readings are going into the groundwater card, along with a new water-supply card for cities that import their water, starting with San Francisco's Hetch Hetchy and Oakland's Pardee reservoir.</li>
+          <li><strong>Steadier, and private.</strong> The app moved to dedicated hosting for reliability, and it never guesses where you are from your IP address.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What I'm working through</h2>
+        <ul>
+          <li><strong>Matching places to the right records.</strong> The school-district matcher once paired Albuquerque with a much smaller district nearby. I'm fixing the matcher and auditing every preset city for matches that don't pass a sanity check.</li>
+          <li><strong>Prose drifting from its badges.</strong> A brief called a respiratory burden "high" when its badge said moderate. I'm adding a guardrail that rejects any characterization that disagrees with its badge, rather than relying on review to catch it.</li>
+          <li><strong>Peer rankings that go missing.</strong> A ranking only means something with enough peer cities cached behind it, and the brief has to actually use it. Right now the Overview often leaves it out.</li>
+          <li><strong>Tone.</strong> The Overview's three slots, Bright spot, Worth knowing, and Highest vulnerability factor, had all drifted toward equally grim. I'm bringing back richer summaries and having the app research city facts on its own, so the bright spot earns its name.</li>
+          <li><strong>Too much on one page.</strong> The city view shows everything at once. I'm splitting it into sections modeled on Global's Earth spheres, so tapping Water shows only water data and a brief written just for it.</li>
+        </ul>
+        <p>Each of these is the kind of error the audit layer exists to catch. Catching them is how I tighten it.</p>
       </section>
 
       <section>
