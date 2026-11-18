@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aura, Jorge Rivero</title>
-  <meta name="description" content="On-demand environmental briefs for about 30,000 U.S. places, where LLM prose is locked to deterministic data badges and audited.">
+  <meta name="description" content="On-demand environmental briefs for about 30,000 U.S. places, where the LLM's prose has to match data badges computed in code.">
   <link rel="canonical" href="https://jorgecoded.dev/work/aura.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Aura, Jorge Rivero">
-  <meta property="og:description" content="City briefs where the model's prose is locked to deterministic data badges and audited.">
+  <meta property="og:description" content="City briefs where the model's prose has to match data badges computed in code.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -66,14 +66,14 @@
         <ol>
           <li><strong>Badges are the ground truth.</strong> Each metric gets a status, like "moderate," computed in code from the source data. The model never assigns one.</li>
           <li><strong>The prose is commentary on the badges.</strong> The LLM writes each section with the badges as fixed inputs, so its characterizations have to agree with them.</li>
-          <li><strong>An audit layer checks that it did.</strong> Briefs are reviewed against their badges, and new metrics go through a research, propose, and approve workbench before they reach a brief.</li>
+          <li><strong>An audit layer checks that it did.</strong> Every brief is checked against its badges. New metrics go through a research, propose, and approve workflow before they appear in one.</li>
           <li><strong>It runs at national scale.</strong> Any of about 30,000 Census places can get a brief on demand, with fuzzy search, peer-city rankings, trend language, and cached generation that refreshes in the background.</li>
         </ol>
 
         <figure>
           <svg viewBox="0 0 560 330" role="img" aria-labelledby="d3t d3d">
             <title id="d3t">How a brief is built</title>
-            <desc id="d3d">Federal datasets feed a deterministic badge layer. The LLM writes prose locked to the badges. An audit layer checks the prose against the badges and sends drift back before the brief is published.</desc>
+            <desc id="d3d">Federal datasets feed a deterministic badge layer. The LLM writes prose that has to match the badges. An audit layer checks the prose against the badges and sends drift back before the brief is published.</desc>
             <defs>
               <marker id="m3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-m"/></marker>
               <marker id="m3f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-head-f"/></marker>
@@ -101,18 +101,18 @@
             <path class="d-line-fail" d="M400,275 H470 V199 H403" marker-end="url(#m3f)"/>
             <text class="d-tf" x="478" y="240">drift</text>
           </svg>
-          <figcaption>Same principle as the reporting system: code decides what's true, the model decides how to say it.</figcaption>
+          <figcaption>Code decides what's true. The model decides how to say it.</figcaption>
         </figure>
       </section>
 
       <section>
         <h2>What I'm still fixing</h2>
-        <p>A school-district matcher once paired a large city with a much smaller district nearby, and prose can still drift from a badge, like calling a moderate rate "high." Both are exactly the errors the audit layer exists to catch, and catching them is how I tighten it.</p>
+        <p>A school-district matcher once paired a large city with a much smaller district nearby, and prose can still drift from a badge, like calling a moderate rate "high." Those are the errors the audit layer exists to catch, and each one I find makes it stricter.</p>
       </section>
 
       <section>
         <h2>Why it matters to me</h2>
-        <p class="takeaway">Civic data should be traceable, consistent, and readable by the people who make decisions with it. That's the same job I do with AI inside client operations.</p>
+        <p class="takeaway">Civic data should be traceable, consistent, and readable by the people who make decisions with it. I hold AI in client work to the same standard.</p>
       </section>
 
       <nav class="next" aria-label="Back to start">
